@@ -11,6 +11,11 @@ Vue.component(
     require('./components/ExampleComponent.vue').default
 );
 
+Vue.component(
+    'example-2',
+    require('./components/Example2.vue').default
+);
+
 Vue.use(VueRouter);
 
 const app = new Vue({
