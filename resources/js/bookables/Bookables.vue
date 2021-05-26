@@ -19,6 +19,24 @@ import BookableListItem from "./BookableListItem";
 export default {
     components: {
         BookableListItem
-    }    
+    },
+    // beforeCreate(){
+    //     console.log("before created");
+    // },
+    created(){
+        console.log("created");
+    },
+    // beforeMount(){
+    //     console.log("before mounted");
+    // },
+    // mounted(){
+    //     console.log("mounted");
+    // },
+    // beforeDestroy(){
+    //     console.log("before destroy");
+    // },
+    // destroyed(){
+    //     console.log("destroyed");
+    // }
 }
 </script>

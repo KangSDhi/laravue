@@ -11,7 +11,8 @@ export default {
     props: { "itemTitle": String, "itemContent": String, "price": Number },
     mounted(){
         console.log(this.itemTitle);
-        this.itemTitle = "new title";
+        // Uncomment to see why modifying prop is a bad idea! 
+        // this.itemTitle = "new title";
     }
 }
 </script>

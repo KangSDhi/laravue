@@ -1923,8 +1923,8 @@ __webpack_require__.r(__webpack_exports__);
     "price": Number
   },
   mounted: function mounted() {
-    console.log(this.itemTitle);
-    this.itemTitle = "new title";
+    console.log(this.itemTitle); // Uncomment to see why modifying prop is a bad idea! 
+    // this.itemTitle = "new title";
   }
 });
 
@@ -1959,7 +1959,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     BookableListItem: _BookableListItem__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
+  },
+  // beforeCreate(){
+  //     console.log("before created");
+  // },
+  created: function created() {
+    console.log("created");
+  } // beforeMount(){
+  //     console.log("before mounted");
+  // },
+  // mounted(){
+  //     console.log("mounted");
+  // },
+  // beforeDestroy(){
+  //     console.log("before destroy");
+  // },
+  // destroyed(){
+  //     console.log("destroyed");
+  // }
+
 });
 
 /***/ }),
