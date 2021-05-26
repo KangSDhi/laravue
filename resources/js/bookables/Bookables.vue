@@ -1,7 +1,7 @@
 <template>
     <div>
         <bookable-list-item 
-            item-title="Cheap Villa" 
+            item-title="Cheap Villa 1" 
             item-content="Very Cheap Villa" 
             v-bind:price="1000">
         </bookable-list-item>

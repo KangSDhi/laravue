@@ -1921,6 +1921,10 @@ __webpack_require__.r(__webpack_exports__);
     "itemTitle": String,
     "itemContent": String,
     "price": Number
+  },
+  mounted: function mounted() {
+    console.log(this.itemTitle);
+    this.itemTitle = "new title";
   }
 });
 
@@ -37740,7 +37744,7 @@ var render = function() {
     [
       _c("bookable-list-item", {
         attrs: {
-          "item-title": "Cheap Villa",
+          "item-title": "Cheap Villa 1",
           "item-content": "Very Cheap Villa",
           price: 1000
         }
