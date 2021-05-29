@@ -12,7 +12,10 @@ export default {
     mounted(){
         console.log(this.itemTitle);
         // Uncomment to see why modifying prop is a bad idea! 
-        // this.itemTitle = "new title";
+        // setTimeout(() => {
+        //     this.itemTitle = "new title";
+        // }, 15000);
+        
     }
 }
 </script>

@@ -1924,7 +1924,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     console.log(this.itemTitle); // Uncomment to see why modifying prop is a bad idea! 
-    // this.itemTitle = "new title";
+    // setTimeout(() => {
+    //     this.itemTitle = "new title";
+    // }, 15000);
   }
 });
 
@@ -1955,6 +1957,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1962,14 +1969,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      bookable1: {
-        title: "Villa 1",
-        content: "Cheap"
-      },
-      bookable2: {
-        title: "Villa 2",
-        content: "Expensive"
-      }
+      bookable1: null,
+      bookable2: null
     };
   },
   // beforeCreate(){
@@ -1982,9 +1983,27 @@ __webpack_require__.r(__webpack_exports__);
     console.log(this.bookable1);
     console.log(this.bookable2);
     setTimeout(function () {
-      _this.bookable1.title = "Expensive villa";
-      _this.bookable2.title = "Very Expensive villa";
+      _this.bookable1 = {
+        title: "Cheap Villa !!!",
+        content: "A very cheap villa"
+      };
+      _this.bookable2 = {
+        title: "Cheap Villa 2",
+        content: "A very cheap villa 2"
+      };
+      _this.bookable3 = {
+        title: "Expensive Villa 3",
+        content: "A very expensive villa 3"
+      };
     }, 5000);
+    setTimeout(function () {
+      console.log("First Change");
+      _this.bookable1.title = "You Will See This!";
+    }, 8000);
+    setTimeout(function () {
+      console.log("Second Change");
+      _this.bookable3.title = "You wont see this!";
+    }, 12000);
   } // beforeMount(){
   //     console.log("before mounted");
   // },
@@ -37792,6 +37811,14 @@ var render = function() {
         attrs: {
           "item-title": _vm.bookable2.title,
           "item-content": _vm.bookable2.content,
+          price: 1500
+        }
+      }),
+      _vm._v(" "),
+      _c("bookable-list-item", {
+        attrs: {
+          "item-title": _vm.bookable3.title,
+          "item-content": _vm.bookable3.content,
           price: 1500
         }
       })
