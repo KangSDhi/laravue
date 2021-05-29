@@ -1,5 +1,6 @@
 <template>
     <div>
+        Row is {{ rows }}
         <div v-if="loading">
             Data is loading ...
         </div>
@@ -25,7 +26,15 @@ export default {
     data(){
         return {
             bookables: null,
-            loading: false
+            loading: false,
+            columns: 3
+        }
+    },
+    computed: {
+        rows(){
+            return this.bookables === null 
+            ? 0 
+            : Math.ceil(this.bookables.length / this.columns);
         }
     },
     created(){
@@ -33,12 +42,54 @@ export default {
         setTimeout(() => {
             this.bookables = [
                 {
-                    id: 1,
                     title: "Cheap Villa !!!",
                     content: "A very cheap villa"
                 },
                 {
-                    id: 2,
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
+                    title: "Cheap Villa 2",
+                    content: "A very cheap villa 2"
+                },
+                {
                     title: "Cheap Villa 2",
                     content: "A very cheap villa 2"
                 }
