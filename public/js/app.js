@@ -1959,9 +1959,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -1973,15 +1970,9 @@ __webpack_require__.r(__webpack_exports__);
       bookable2: null
     };
   },
-  // beforeCreate(){
-  //     console.log("before created");
-  // },
   created: function created() {
     var _this = this;
 
-    console.log("created");
-    console.log(this.bookable1);
-    console.log(this.bookable2);
     setTimeout(function () {
       _this.bookable1 = {
         title: "Cheap Villa !!!",
@@ -1991,32 +1982,8 @@ __webpack_require__.r(__webpack_exports__);
         title: "Cheap Villa 2",
         content: "A very cheap villa 2"
       };
-      _this.bookable3 = {
-        title: "Expensive Villa 3",
-        content: "A very expensive villa 3"
-      };
-    }, 5000);
-    setTimeout(function () {
-      console.log("First Change");
-      _this.bookable1.title = "You Will See This!";
-    }, 8000);
-    setTimeout(function () {
-      console.log("Second Change");
-      _this.bookable3.title = "You wont see this!";
-    }, 12000);
-  } // beforeMount(){
-  //     console.log("before mounted");
-  // },
-  // mounted(){
-  //     console.log("mounted");
-  // },
-  // beforeDestroy(){
-  //     console.log("before destroy");
-  // },
-  // destroyed(){
-  //     console.log("destroyed");
-  // }
-
+    }, 2000);
+  }
 });
 
 /***/ }),
@@ -37799,29 +37766,25 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("bookable-list-item", {
-        attrs: {
-          "item-title": _vm.bookable1.title,
-          "item-content": _vm.bookable1.content,
-          price: 1000
-        }
-      }),
+      _vm.bookable1
+        ? _c("bookable-list-item", {
+            attrs: {
+              "item-title": _vm.bookable1.title,
+              "item-content": _vm.bookable1.content,
+              price: 1000
+            }
+          })
+        : _vm._e(),
       _vm._v(" "),
-      _c("bookable-list-item", {
-        attrs: {
-          "item-title": _vm.bookable2.title,
-          "item-content": _vm.bookable2.content,
-          price: 1500
-        }
-      }),
-      _vm._v(" "),
-      _c("bookable-list-item", {
-        attrs: {
-          "item-title": _vm.bookable3.title,
-          "item-content": _vm.bookable3.content,
-          price: 1500
-        }
-      })
+      _vm.bookable2 !== null
+        ? _c("bookable-list-item", {
+            attrs: {
+              "item-title": _vm.bookable2.title,
+              "item-content": _vm.bookable2.content,
+              price: 1500
+            }
+          })
+        : _vm._e()
     ],
     1
   )
