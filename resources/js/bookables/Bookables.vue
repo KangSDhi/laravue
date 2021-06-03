@@ -10,7 +10,7 @@
                 :key="'row' + row + column">
                     <bookable-list-item 
                         v-bind:item-title="bookable.title" 
-                        v-bind:item-content="bookable.content" 
+                        v-bind:item-description="bookable.description" 
                         v-bind:price="1000">
                     </bookable-list-item>   
                 </div>
@@ -65,68 +65,10 @@ export default {
 
         console.log(p);
 
-        setTimeout(() => {
-            this.bookables = [
-                {
-                    title: "Cheap Villa !!!",
-                    content: "A very cheap villa"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                },
-                {
-                    title: "Cheap Villa 2",
-                    content: "A very cheap villa 2"
-                }
-            ];
+        const request =  axios.get("/api/bookables").then(response => {
+            this.bookables = response.data
             this.loading = false;
-        }, 2000);
-
-    },
+        });
+    }
 }
 </script>
